@@ -199,7 +199,7 @@
                     Developer & System Enthusiast
                 </p>
                 <div class="mt-10 slide-up" style="animation-delay: 0.8s;">
-                    <a href="#about" class="inline-block px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-full font-semibold transition-all duration-300 glow">
+                    <a href="#devices" class="inline-block px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-full font-semibold transition-all duration-300 glow">
                         Explore More
                     </a>
                 </div>
@@ -341,7 +341,7 @@
 
         <!-- Footer -->
         <footer class="text-center py-8 text-gray-400">
-            <p>© 2024 Rexilone. Made with 💜</p>
+            <p>© 2026 Rexilone. Made with 💜</p>
         </footer>
     </div>
 
@@ -395,16 +395,17 @@
             observer.observe(el);
         });
 
-        // Parallax effect on mouse move
+        // Subtle parallax effect on stars only
         document.addEventListener('mousemove', (e) => {
             const mouseX = e.clientX / window.innerWidth;
             const mouseY = e.clientY / window.innerHeight;
             
-            document.querySelectorAll('.glass').forEach((el, index) => {
-                const speed = (index + 1) * 0.5;
+            const stars = document.querySelectorAll('.star');
+            stars.forEach((star, index) => {
+                const speed = (index % 3) * 0.3;
                 const x = (mouseX - 0.5) * speed;
                 const y = (mouseY - 0.5) * speed;
-                el.style.transform = `translate(${x}px, ${y}px)`;
+                star.style.transform = `translate(${x}px, ${y}px)`;
             });
         });
     </script>
